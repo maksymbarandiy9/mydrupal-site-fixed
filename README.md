@@ -38,5 +38,5 @@ This project implements a complete blog system in Drupal 10 with custom content 
 ### Setup Steps
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/maksymbarandiy9/mydrupal-site.git
+   git clone https://github.com/maksymbarandiy9/mydrupal-site-fixed.git
    cd mydrupal-site
