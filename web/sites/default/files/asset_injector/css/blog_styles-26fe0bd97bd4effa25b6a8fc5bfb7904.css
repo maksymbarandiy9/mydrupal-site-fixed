@@ -1,0 +1,282 @@
+/* ===== ГЛОБАЛЬНІ СТИЛІ ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* ===== КАРТКИ ДОПИСІВ ===== */
+.node--type-blog {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 60px;
+    box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.node--type-blog:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 40px 120px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+/* ===== АДАПТИВНІ ФОТО ===== */
+.node--type-blog img,
+.field--name-field-zobrazhennya img,
+.field--type-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 800px !important;
+    border-radius: 20px;
+    margin: 40px auto !important;
+    display: block;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+    transition: all 0.4s ease;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+/* Різні розміри фото для різних екранів */
+@media (min-width: 1200px) {
+    .node--type-blog img {
+        max-height: 500px !important;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .node--type-blog img {
+        max-height: 400px !important;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767px) {
+    .node--type-blog img {
+        max-height: 300px !important;
+        object-fit: cover;
+        border-radius: 15px;
+        margin: 30px auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .node--type-blog img {
+        max-height: 250px !important;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 20px auto !important;
+    }
+}
+
+/* Ефекти при наведенні */
+.node--type-blog img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.node--type-blog h1 {
+    font-size: 4em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 40px 0;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    line-height: 1.2;
+}
+
+.node--type-blog h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* ===== МЕТА-ІНФОРМАЦІЯ ===== */
+.node__meta {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    color: #5d6d7e;
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    max-width: 400px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== ПІДЗАГОЛОВКИ ===== */
+.node--type-blog h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 60px 0 30px 0;
+    padding: 0 0 15px 0;
+    position: relative;
+    color: #2c3e50;
+}
+
+.node--type-blog h2::before {
+    content: '✦';
+    position: absolute;
+    left: -50px;
+    color: #667eea;
+    font-size: 1.5em;
+}
+
+.node--type-blog h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    padding-left: 25px;
+    border-left: 4px solid #764ba2;
+    color: #34495e;
+}
+
+/* ===== ТЕКСТ ===== */
+.node--type-blog p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #4a5568;
+    text-align: justify;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== СПИСКИ ===== */
+.node--type-blog ul, 
+.node--type-blog ol {
+    margin: 30px 0;
+    padding-left: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.node--type-blog li {
+    margin-bottom: 15px;
+    font-size: 1.15em;
+    padding: 12px 0;
+}
+
+.node--type-blog ul li::before {
+    content: '▸';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 1.3em;
+}
+/* ЕКСТРЕНЕ ВИПРАВЛЕННЯ ДЛЯ ФОТО */
+.field--name-field-zobrazhennya,
+.field--type-image {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 30px auto !important;
+    display: block !important;
+    text-align: center;
+}
+
+.field--name-field-zobrazhennya img,
+.field--type-image img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: contain !important;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto !important;
+}
+
+/* Для мобільних */
+@media (max-width: 768px) {
+    .field--name-field-zobrazhennya img,
+    .field--type-image img {
+        max-height: 300px !important;
+        max-width: 90% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .field--name-field-zobrazhennya img,
+    .field--type-image img {
+        max-height: 250px !important;
+        max-width: 95% !important;
+    }
+}
+/* ===== АДАПТИВНІСТЬ ДЛЯ ТЕКСТУ ===== */
+@media (max-width: 768px) {
+    .node--type-blog {
+        margin: 30px 20px;
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+    
+    .node--type-blog h1 {
+        font-size: 2.5em;
+    }
+    
+    .node--type-blog h2 {
+        font-size: 1.8em;
+        margin-left: 40px;
+    }
+    
+    .node--type-blog h2::before {
+        left: -40px;
+    }
+    
+    .node__meta {
+        margin: 0 0 30px 0;
+        padding: 15px 20px;
+    }
+    
+    .node--type-blog p {
+        font-size: 1.1em;
+        text-align: left;
+    }
+}
+
+/* ===== АНІМАЦІЯ ПОЯВИ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.node--type-blog {
+    animation: fadeInUp 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/* Послідовна поява для кількох дописів */
+.node--type-blog:nth-child(1) { animation-delay: 0.1s; }
+.node--type-blog:nth-child(2) { animation-delay: 0.2s; }
+.node--type-blog:nth-child(3) { animation-delay: 0.3s; }
+.node--type-blog:nth-child(4) { animation-delay: 0.4s; }

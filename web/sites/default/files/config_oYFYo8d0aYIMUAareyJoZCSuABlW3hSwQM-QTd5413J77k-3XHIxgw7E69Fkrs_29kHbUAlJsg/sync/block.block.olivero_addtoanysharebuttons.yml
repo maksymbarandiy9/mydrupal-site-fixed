@@ -1,0 +1,33 @@
+uuid: 588d03b0-2c9d-4b72-936d-2e02e172a89b
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+    - node
+  theme:
+    - olivero
+id: olivero_addtoanysharebuttons
+theme: olivero
+region: social
+weight: -6
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'Поділитися в соціальних мережах'
+  label_display: visible
+  provider: addtoany
+  context_mapping: {  }
+  buttons_size: null
+  addtoany_html: ''
+  link_url: ''
+  link_title: ''
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      blog: blog

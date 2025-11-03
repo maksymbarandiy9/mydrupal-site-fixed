@@ -1,0 +1,19 @@
+uuid: c7fd4a27-f40b-4807-8e88-0dede883d958
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_avtor
+    - node.type.blog
+id: node.blog.field_avtor
+field_name: field_avtor
+entity_type: node
+bundle: blog
+label: Автор
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
